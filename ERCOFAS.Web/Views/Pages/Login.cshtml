@@ -1,0 +1,74 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Energy Regulatory Commission Online Filing and Application System (ERC-OFAS)</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+
+    <environment names="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.css" />
+        <link rel="stylesheet" href="~/css/animate.css" />
+        <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="~/css/animate.css" />
+        <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    </environment>
+
+</head>
+<body class="gray-bg">
+    <div id="login-wrapper" class="loginColumns animated fadeInDown">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="ibox-content">
+                    <div class="login-form m-t" role="form" action="index.html">
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" class="form-control" placeholder="name@gmail.com" required="">
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" class="form-control" placeholder="Enter your password" required="">
+                            <a><u>Forgot password?</u></a>
+                        </div>
+                        <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+
+                        <button type="submit" class="btn btn-info block full-width m-b"  onclick="location.href='@Url.Action("Dashboard_1", "Dashboards")'">Login</button>
+
+                        <p class="mt-2 text-center">
+                            Don't have an account? <a href="@Url.Action("SkateHolder", "Registration")"><u>Register</u></a>
+                        </p>
+                        <p class="mt-2 text-center">
+                            For third party meter shops <a href="#"><u>Login here</u></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 text-center">
+                <img class="logo" src="@Url.Content("~/images/logo/93x93.png")" alt="ERC-OFAS">
+                <p class="mt-2">Republic of the Philippines</p>
+                <h2 class="header-text font-bold">ENERGY REGULATORY COMMISSION ONLINE FILING AND APPLICATION SYSTEM (ERC-OFAS)</h2>
+                <p>
+                    No need for long lines and long waiting times, with the OFAS, You can now file and monitor your
+                    non-EVOSS transactions with ERC online.
+                </p>
+                <p>
+                    Anytime, anywhere.
+                </p>
+                <p>
+                    For EVOSS Transactions, please click <a href="#"><u>here</u></a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
