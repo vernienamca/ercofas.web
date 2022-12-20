@@ -6,6 +6,10 @@
     <RootNamespace>ERCOFAS.Web</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Controllers\OnGoingCasesController.cs~RF4b207ba.TMP" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <Folder Include="Models\" />

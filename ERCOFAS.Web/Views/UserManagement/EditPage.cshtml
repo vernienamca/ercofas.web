@@ -1,0 +1,194 @@
+﻿@{
+    ViewData["Title"] = "Edit Page";
+}
+<div id="page-header" class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2 class="name">[Page Name]</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="@Url.Action("Dashboard_1", "Dashboards")">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item">
+                User Management
+            </li>
+            <li class="breadcrumb-item">
+                Pages
+            </li>
+            <li class="active breadcrumb-item">
+                <strong>Edit Page</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2"></div>
+</div>
+<div id="page-content" class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="tabs-container">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li><a class="nav-link active" data-toggle="tab" href="#tab-1">General</a></li>
+                    <li>
+                        <a class="nav-link" data-toggle="tab" href="#tab-2">
+                            Manage Roles ( <span class="tab-count">0</span> )
+                        </a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" id="tab-1" class="tab-pane active">
+                        <div class="panel-body">
+                            <p>
+                                <mark><i>All fields with red asterisk ( <span class="text-danger font-bold">*</span> ) are required to fill.</i></mark>
+                            </p>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="alert alert-success alert-dismissable alert-success-page">
+                                        <button data-type="page-success" aria-hidden="true" class="close" type="button">×</button>
+                                        <strong>Success!</strong> Your changes have been successfully saved.
+                                    </div>
+                                    <div class="alert alert-danger alert-dismissable alert-danger-page">
+                                        <button data-type="page-danger" aria-hidden="true" class="close" type="button">×</button>
+                                        <strong>Error!</strong> Please fill out required fields below to proceed.
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Page Name <span class="text-danger font-bold">*</span></label>
+                                        <input type="text" class="form-control page-name-text" required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Description  <span class="text-danger font-bold">*</span></label>
+                                        <input type="text" class="form-control description-text" required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Url Path <span class="text-danger font-bold">*</span></label>
+                                        <input type="text" class="form-control url-path-text" required="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label>
+                                            <input type="checkbox" class="accessible-all-check"> Accessible By All
+                                            <small class="form-text m-b-none"><i>Indicates whether the page should be accessible to everyone.</i></small>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label>
+                                            <input type="checkbox" class="status-check"> Active
+                                            <small class="form-text m-b-none"><i>If unchecked, the page will not be shown in the navigation.</i></small>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+
+                            <div class="form-group row">
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <button class="btn btn-info btn-md save-changes" type="submit">
+                                        <i class="fa fa-thumbs-o-up"></i> Save changes
+                                    </button>
+                                    <button onclick="location.href='@Url.Action("Pages", "UserManagement")'" class="btn btn-white btn-md" type="submit">
+                                        <i class="fa fa-times"></i> Close
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" id="tab-2" class="tab-pane">
+                        <div class="panel-body">
+                            <p>Everyone who works on your page can have different role depending on what they need to work on.</p>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="alert alert-success alert-dismissable alert-manage-roles">
+                                        <button data-type="manage-roles" aria-hidden="true" class="close close-manage-role-success" type="button">×</button>
+                                        <strong>Success!</strong> Your changes have been successfully saved.
+                                    </div>
+
+                                    <div class="form-group has-success row">
+                                        <div class="col-sm-2">
+                                            <button id="add-role-button" type="button" class="btn btn-info">
+                                                <i class="fa fa-plus"></i> Add
+                                            </button>
+                                        </div>
+                                        <div class="col-sm-10">
+                                            <div class="input-group">
+                                                <input id="search-role-text" type="text" class="form-control" placeholder="Search roles here...">
+                                                <span class="input-group-append">
+                                                    <button id="search-role-button" type="button" class="btn btn-info">Search</button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <table class="table table-striped mt-3">
+                                        <thead>
+                                            <tr>
+                                                <th>Role Name</th>
+                                                <th class="text-center">Can Create</th>
+                                                <th class="text-center">Can Read</th>
+                                                <th class="text-center">Can Update</th>
+                                                <th class="text-center">Can Delete</th>
+                                                <th class="text-center">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table-data">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-lg-12">
+                                    <div class="col-sm-4 col-sm-offset-2">
+                                        <button class="btn btn-info btn-md save-manage-roles" type="submit">
+                                            <i class="fa fa-thumbs-o-up"></i> Save changes
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="page-role-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>
+                    List of Roles (<span class="count"></span>)
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control search-role-text" placeholder="Search roles here..." autofocus>
+                </div>
+
+                <table class="table table-striped mt-3">
+                    <thead>
+                        <tr>
+                            <th>Role Name</th>
+                            <th class="text-center">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-data">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+<environment names="Development">
+    <script type="text/javascript" src="~/js/page.js"></script>
+</environment>
+<environment names="Staging,Production">
+    <script type="text/javascript" src="~/js/page.js"></script>
+</environment>
+}

@@ -3,7 +3,7 @@
         <ul class="nav metismenu" id="side-menu">
             <li class="nav-header">
                 <div class="dropdown profile-element">
-                    <img alt="image" class="rounded-circle" src="~/Images/a9.png" />
+                    <img alt="image" class="rounded-circle" src="~/Images/logo/93x93.png">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <span class="block m-t-xs font-bold">Angel Lacson</span>
                         <span class="text-muted text-xs block">Company Staff <b class="caret"></b></span>
@@ -29,8 +29,12 @@
             <li class="@Html.IsSelected(controller: "Hearings")">
                 <a href="@Url.Action("Index", "Layouts")"><i class="fa fa-newspaper-o"></i> <span class="nav-label" data-i18n="nav.layouts">Hearings</span> </a>
             </li>
-            <li class="@Html.IsSelected(controller: "Layouts")">
-                <a href="@Url.Action("Index", "Layouts")"><i class="fa fa-briefcase"></i> <span class="nav-label" data-i18n="nav.layouts">On-Going Cases</span> </a>
+            <li class="@Html.IsSelected(controller: "OnGoingCases")">
+                <a href="@Url.Action("Index", "OnGoingCases")"><i class="fa fa-briefcase"></i> <span class="nav-label" data-i18n="nav.layouts">On-Going Cases</span> <span class="fa arrow"></span></a>
+                 <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Layouts", cssClass: "in")">
+                    <li class="@Html.IsSelected(action: "CasePleadings")"><a href="@Url.Action("CasePleadings", "OnGoingCases")">File a Case/Pleading</a></li>
+                    <li class="@Html.IsSelected(action: "PreFilingList")"><a href="@Url.Action("PreFilingList", "OnGoingCases")">Pre-Filing List</a></li>
+                </ul>
             </li>
             <li class="@Html.IsSelected(controller: "Metrics")">
                 <a href="@Url.Action("Index", "Metrics")"><i class="fa fa-tasks"></i> <span class="nav-label" data-i18n="nav.metrics">Transactions</span> </a>
@@ -41,11 +45,9 @@
             <li class="@Html.IsSelected(controller: "UserManagement")">
                 <a href="@Url.Action("Dashboard_1", "Dashboards")"><i class="fa fa-users"></i> <span class="nav-label" data-i18n="nav.dashboard">User Management</span> <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "UserManagement", cssClass: "in")">
-                    <li class="@Html.IsSelected(action: "Dashboard_1")"><a href="@Url.Action("Dashboard_1", "Dashboards")">Pages</a></li>
-                    <li class="@Html.IsSelected(action: "Dashboard_2")"><a href="@Url.Action("Dashboard_2", "Dashboards")">Roles</a></li>
+                    <li class="@Html.IsSelected(action: "Pages")"><a href="@Url.Action("Pages", "UserManagement")">Pages</a></li>
+                    <li class="@Html.IsSelected(action: "Roles")"><a href="@Url.Action("Roles", "UserManagement")">Roles</a></li>
                     <li class="@Html.IsSelected(action: "Dashboard_5")"><a href="@Url.Action("Dashboard_5", "Dashboards")">Users</a></li>
-                    <li class="@Html.IsSelected(action: "Dashboard_3")"><a href="@Url.Action("Dashboard_3", "Dashboards")">User Roles</a></li>
-                    <li class="@Html.IsSelected(action: "Dashboard_4_1")"><a href="@Url.Action("Dashboard_4_1", "Dashboards")">Page Access</a></li>
                 </ul>
             </li>
             <li class="@Html.IsSelected(controller: "Settings")">

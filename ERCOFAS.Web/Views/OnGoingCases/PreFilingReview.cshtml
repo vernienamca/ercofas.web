@@ -1,0 +1,109 @@
+﻿@{
+    ViewData["Title"] = "Pre-Filing Review";
+}
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Case/Pleading 01 - Anita Letterback</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="@Url.Action("Dashboard_1", "Dashboards")">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item">
+                Pre-Filing List
+            </li>
+            <li class="active breadcrumb-item">
+                <strong>Pre-Filing Review</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2"></div>
+</div>
+<div id="role-content" class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h5>Pre-Filing Review</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="contact-box" style="border: none;">
+                            <a class="row" href="profile.html">
+                                <div class="col-4">
+                                    <div class="text-center">
+                                        <img alt="image" class="rounded-circle m-t-xs img-fluid" src="~/images/a9.png">
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                    <p><strong>Subject of Request:</strong> Case/Pleading 01</p>
+                                    <p><strong>Full Name:</strong> Anita Letterback</p>
+                                    <p><strong>Case Type:</strong> Criminal Case</p>
+                                    <p><strong>Case Nature:</strong> Disobedience of Authorities	</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <h4>Uploaded Documents</h4>
+                    <div class="m-t-lg">
+                        <p>
+                            <span><i class="fa fa-paperclip"></i> 2 attachments - </span>
+                            <a href="#">Download all</a>
+                            |
+                            <a href="#">View all images</a>
+                        </p>
+
+                        <div class="attachment">
+                            <div class="file-box">
+                                <div class="file">
+                                    <a href="#">
+                                        <span class="corner"></span>
+
+                                        <div class="icon">
+                                            <i class="fa fa-file"></i>
+                                        </div>
+                                        <div class="file-name">
+                                            Document_2014.doc
+                                            <br>
+                                            <small>Added: Jan 11, 2014</small>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </div>
+                            <div class="file-box">
+                                <div class="file">
+                                    <a href="#">
+                                        <span class="corner"></span>
+
+                                        <div class="icon">
+                                            <i class="fa fa-line-chart"></i>
+                                        </div>
+                                        <div class="file-name">
+                                            Seels_2015.xls
+                                            <br>
+                                            <small>Added: May 13, 2015</small>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+<environment names="Development">
+    <script type="text/javascript" src="~/js/role.js"></script>
+</environment>
+<environment names="Staging,Production">
+    <script type="text/javascript" src="~/js/role.js"></script>
+</environment>
+}

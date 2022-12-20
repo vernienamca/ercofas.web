@@ -1,0 +1,91 @@
+﻿@{
+    ViewData["Title"] = "Permissions";
+}
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Pages</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="@Url.Action("Dashboard_1", "Dashboards")">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item">
+                User Management
+            </li>
+            <li class="active breadcrumb-item">
+                <strong>Pages</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2"></div>
+</div>
+<div id="page-list" class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h5>
+                        List of Pages
+                        <span class="count label label-info float-right">0</span>
+                    </h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="table-responsive">
+                         <div class="form-group has-success row">
+                            <div class="col-sm-12">
+                                <div class="input-group">
+                                    <input id="search-page-text" type="text" class="form-control" placeholder="Search pages here..."> 
+                                    <span class="input-group-append"> 
+                                        <button id="search-page-button" type="button" class="btn btn-info">Search</button> 
+                                    </span>
+                                </div>
+                           </div>
+                        </div>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Page Name</th>
+                                    <th>Description</th>
+                                    <th>Url Path</th>
+                                    <th class="text-center">Status</th>
+                                    <th>Date Created</th>
+                                    <th class="text-center">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-data">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <environment names="Development">
+        <script type="text/javascript" src="~/lib/flot/jquery.flot.js"></script>
+        <script type="text/javascript" src="~/lib/flot/jquery.flot.tooltip.min.js"></script>
+        <script type="text/javascript" src="~/lib/flot/jquery.flot.resize.js"></script>
+        <script type="text/javascript" src="~/lib/flot/jquery.flot.pie.js"></script>
+        <script type="text/javascript" src="~/lib/flot/jquery.flot.time.js"></script>
+        <script type="text/javascript" src="~/lib/flot/jquery.flot.spline.js"></script>
+        <script type="text/javascript" src="~/lib/sparkline/jquery.sparkline.min.js"></script>
+        <script type="text/javascript" src="~/lib/chartJs/Chart.min.js"></script>
+        <script type="text/javascript" src="~/lib/peity/jquery.peity.js"></script>
+        <script type="text/javascript" src="~/js/page.js"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script type="text/javascript" src="~/lib/flot/jquery.flot.js"></script>
+        <script type="text/javascript" src="~/lib/flot/jquery.flot.tooltip.min.js"></script>
+        <script type="text/javascript" src="~/lib/flot/jquery.flot.resize.js"></script>
+        <script type="text/javascript" src="~/lib/flot/jquery.flot.pie.js"></script>
+        <script type="text/javascript" src="~/lib/flot/jquery.flot.time.js"></script>
+        <script type="text/javascript" src="~/lib/flot/jquery.flot.spline.js"></script>
+        <script type="text/javascript" src="~/lib/sparkline/jquery.sparkline.min.js"></script>
+        <script type="text/javascript" src="~/lib/chartJs/Chart.min.js"></script>
+        <script type="text/javascript" src="~/lib/peity/jquery.peity.js"></script>
+        <script type="text/javascript" src="~/js/page.js"></script>
+    </environment>
+}
