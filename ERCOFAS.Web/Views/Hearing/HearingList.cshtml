@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "Hearing List";
+}
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Pre-Filing List</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="@Url.Action("Dashboard_1", "Dashboards")">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item">
+                Hearings
+            </li>
+            <li class="active breadcrumb-item">
+                <strong>Hearing List</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2"></div>
+</div>
+<div id="hearing-list" class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h5>
+                        List of Hearings
+                        <span class="count label label-info float-right">2</span>
+                    </h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="table-responsive">
+                        <div class="form-group has-success row">
+                            <div class="col-sm-12">
+                                <div class="input-group">
+                                    <input id="search-hearing-text" type="text" class="form-control" placeholder="Search requested/scheduled hearings here...">
+                                    <span class="input-group-append">
+                                        <button id="search-role-button" type="button" class="btn btn-info">Search</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Hearing Type</th>
+                                    <th>Schedule</th>
+                                    <th>Meeting Link</th>
+                                    <th>Description</th>                                    
+                                    <th>Date Filed</th>
+                                    <th class="text-center">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-data">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <environment names="Development">
+        <script type="text/javascript" src="~/js/hearing-list.js"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script type="text/javascript" src="~/js/hearing-list.js"></script>
+    </environment>
+}

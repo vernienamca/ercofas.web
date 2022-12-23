@@ -27,7 +27,11 @@
                 </a>
             </li>
             <li class="@Html.IsSelected(controller: "Hearings")">
-                <a href="@Url.Action("Index", "Layouts")"><i class="fa fa-newspaper-o"></i> <span class="nav-label" data-i18n="nav.layouts">Hearings</span> </a>
+                <a href="@Url.Action("Index", "Hearing")"><i class="fa fa-newspaper-o"></i> <span class="nav-label" data-i18n="nav.layouts">Hearings</span> <span class="fa arrow"></span></a> 
+                <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Layouts", cssClass: "in")">
+                    <li class="@Html.IsSelected(action: "HearingList")"><a href="@Url.Action("HearingList", "Hearing")">Hearing List</a></li>
+                    <li class="@Html.IsSelected(action: "RequestHearing")"><a href="@Url.Action("RequestHearing", "Hearing")">Schedule a hearing</a></li>
+                </ul>
             </li>
             <li class="@Html.IsSelected(controller: "OnGoingCases")">
                 <a href="@Url.Action("Index", "OnGoingCases")"><i class="fa fa-briefcase"></i> <span class="nav-label" data-i18n="nav.layouts">On-Going Cases</span> <span class="fa arrow"></span></a>
