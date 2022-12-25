@@ -26,8 +26,8 @@
                     <span class="nav-label" data-i18n="nav.dashboard">Dashboard <span class="label label-warning float-right">12</span></span>
                 </a>
             </li>
-            <li class="@Html.IsSelected(controller: "Hearings")">
-                <a href="@Url.Action("Index", "Layouts")"><i class="fa fa-newspaper-o"></i> <span class="nav-label" data-i18n="nav.layouts">Hearings</span> </a>
+            <li class="@Html.IsSelected(controller: "SealingAndAcceptanceTesting")">
+                <a href="@Url.Action("Index", "SealingAndAcceptanceTesting")"><i class="fa fa-newspaper-o"></i> <span class="nav-label" data-i18n="nav.layouts">Sealing And Acceptance Testing </span> </a>
             </li>
             <li class="@Html.IsSelected(controller: "OnGoingCases")">
                 <a href="@Url.Action("Index", "OnGoingCases")"><i class="fa fa-briefcase"></i> <span class="nav-label" data-i18n="nav.layouts">On-Going Cases</span> <span class="fa arrow"></span></a>
@@ -35,6 +35,9 @@
                     <li class="@Html.IsSelected(action: "CasePleadings")"><a href="@Url.Action("CasePleadings", "OnGoingCases")">File a Case/Pleading</a></li>
                     <li class="@Html.IsSelected(action: "PreFilingList")"><a href="@Url.Action("PreFilingList", "OnGoingCases")">Pre-Filing List</a></li>
                 </ul>
+            </li>
+            <li class="@Html.IsSelected(controller: "ValidationRequests")">
+                <a href="@Url.Action("Index", "ValidationRequests")"><i class="fa fa-newspaper-o"></i> <span class="nav-label" data-i18n="nav.layouts">Validation Requests</span> </a>
             </li>
             <li class="@Html.IsSelected(controller: "Metrics")">
                 <a href="@Url.Action("Index", "Metrics")"><i class="fa fa-tasks"></i> <span class="nav-label" data-i18n="nav.metrics">Transactions</span> </a>

@@ -1,0 +1,66 @@
+﻿@{
+    ViewData["SealingandAcceptanceTesting"] = "SealingandAcceptanceTesting";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Sealing And Acceptance Testing</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="@Url.Action("Index", "SealingandAcceptanceTesting")">Sealing and Acceptance Testing</a>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2"></div>
+</div>
+<div id="page-list" class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox ">
+                <div class="ibox-content">
+                    <div class="ibox-title justify-content-center d-flex align-items-center">
+                        <h1>
+                            Submission of Request
+                        </h1>
+                    </div>
+                    <br />
+
+                    <form method="post" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <input type="file" name="documents" id="documents" multiple />
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="form-group">
+                                        <div class="col-md-offset-2 col-md-12">
+                                            <input type="checkbox" /><span> </span>Notify ERC for validation of request
+                                            <br />
+                                            <br />
+                                            <br />
+                                            <button class="btn btn-info save-changes" />Submit
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <environment names="Development">
+        <script type="text/javascript" src="~/js/sealing-and-acceptance-testing.js"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script type="text/javascript" src="~/js/sealing-and-acceptance-testing.js"></script>
+    </environment>
+}

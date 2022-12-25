@@ -22,5 +22,7 @@ namespace ERCOFAS.Web
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+
+
     }
 }
